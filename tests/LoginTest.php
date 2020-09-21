@@ -26,7 +26,7 @@ class LoginTest extends TestCase
 
         $response->seeJsonContains(['address' => $this->user->bio]);
         $response->seeJsonContains(['email' => $this->user->email]);
-        $response->seeJsonContains(['name' => $this->user->username]);
+        $response->seeJsonContains(['name' => $this->user->name]);
 
         $responseData = $this->getResponseData();
 

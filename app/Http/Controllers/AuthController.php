@@ -45,24 +45,28 @@ class AuthController extends Controller
      */
     public function register(Request $request)
     {
-        try {
-            Log::info('message');
+
+        Log::info('message');
         $this->validateRegister($request);
+        try {
 
         $user = User::create([
-            'name' => $request->input('user.name'),
-            'email' => $request->input('user.email'),
-            'password' => Hash::make($request->input('user.password')),
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => Hash::make($request->input('password')),
             'address' =>
-            $request->input('user.address'),
+            $request->input('address'),
         ]);
+
+            Log::info(json_encode($user));
 
         // if($user) {
             //return successful response
-            return response()->json(['user' => $user, 'message' => 'CREATED'], 201);
+            return response()->json(['user' => $user, 'message' => 'User created successfully'], 201);
         // }
     } catch (\Exception $e) {
             //return error message
+            Log::info(json_encode($e));
             return response()->json(['message' => 'User Registration Failed!'], 409);
         }
     }
