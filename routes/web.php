@@ -22,7 +22,7 @@ $router->get('/', function () {
 
 // Generate random string
 $router->get('appKey', function () {
-    return str_random('32'); 
+    return \Illuminate\Support\Str::random(32);
 });
 
 
