@@ -38,10 +38,12 @@ class UserController extends Controller
      * @param string $username
      * @return \Illuminate\Http\Response
      */
-    public function getUser($userId)
+    public function getUser($id)
     {
-        $user = $this->getUserById($userId);
-        return new userResource($user);
+        $user = $this->getUserById($id);
+        // return new userResource($user);
+
+        return response()->json($user);
     }
 
     /**
@@ -49,10 +51,10 @@ class UserController extends Controller
      * @param  string $userId
      * @return \App\Models\User
      */
-    protected function getUserById(string $userId)
+    protected function getUserById(string $id)
     {
-        if (!$user = User::findOrFail($userId)) {
-            abort(404, "User with ${userId} not found");
+        if (!$user = User::findOrFail($id)) {
+            abort(404, "User with ${id} not found");
         }
         return $user;
     }
