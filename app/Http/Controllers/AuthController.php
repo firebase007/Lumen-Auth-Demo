@@ -49,17 +49,17 @@ class AuthController extends Controller
         $this->validateRegister($request);
 
         $user = User::create([
-            'name' => $request->input('user.username'),
+            'name' => $request->input('user.name'),
             'email' => $request->input('user.email'),
             'password' => Hash::make($request->input('user.password')),
             'address' =>
             $request->input('user.address'),
         ]);
 
-        if($user) {
+        // if($user) {
             //return successful response
             return response()->json(['user' => $user, 'message' => 'CREATED'], 201);
-        }
+        // }
     } catch (\Exception $e) {
             //return error message
             return response()->json(['message' => 'User Registration Failed!'], 409);
