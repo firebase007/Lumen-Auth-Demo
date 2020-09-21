@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return new UserResource(Auth::user());
+        return response()->json(Auth::user());
     }
 
     /**
@@ -41,8 +41,6 @@ class UserController extends Controller
     public function getUser($id)
     {
         $user = $this->getUserById($id);
-        // return new userResource($user);
-
         return response()->json($user);
     }
 
