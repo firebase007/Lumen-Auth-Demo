@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Log;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Resources\UserResource;
@@ -46,6 +46,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         try {
+            Log::info('message', json_encode($request));
         $this->validateRegister($request);
 
         $user = User::create([
