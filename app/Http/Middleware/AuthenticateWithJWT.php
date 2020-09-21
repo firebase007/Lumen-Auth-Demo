@@ -44,7 +44,7 @@ class AuthenticateWithJWT extends BaseMiddleware
             abort(401, 'JWT error: Token has expired');
         } catch (TokenInvalidException $e) {
             abort(401, 'JWT error: Token is invalid');
-        } catch (JWTException $e) {
+        } catch (\Tymon\JWTAuth\Exceptions\JWTException $e) {
             if ($optional === null) {
                 abort(401);
             }

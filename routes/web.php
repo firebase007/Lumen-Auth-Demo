@@ -16,8 +16,11 @@
 
 // dummy route
 $router->get('/', function () {
-    return response(file_get_contents(__DIR__ . '/../README.md'))
-    ->header('Content-Type', 'text/plain');
+    // return response(file_get_contents(__DIR__ . '/../README.md'))
+    // ->header('Content-Type', 'text/plain');
+    return response()->json([
+        'message' => 'Hello World!',
+    ]);
 });
 
 // Generate random string
@@ -26,7 +29,7 @@ $router->get('appKey', function () {
 });
 
 
-$router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {
+$router->group(['prefix' => 'api', 'middleware' => 'auth:api'], function () use ($router) {
 
 /**
  * Authentication
