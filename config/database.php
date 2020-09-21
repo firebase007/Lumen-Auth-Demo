@@ -58,7 +58,7 @@ return [
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'patriciaauthdemo'),
             'username' => env('DB_USERNAME', 'authdemo'),
-            'password' => env('DB_PASSWORD', 'Manchinee007#'),
+            'password' => env('DB_PASSWORD', 'd8d69fbb'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',

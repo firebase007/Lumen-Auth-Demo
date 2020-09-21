@@ -71,9 +71,6 @@ $app->configure('app');
 | route or middleware that'll be assigned to some specific routes.
 |
 */
-$app->middleware([
-    \Barryvdh\Cors\HandleCors::class,
-]);
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\AuthenticateWithJWT::class,

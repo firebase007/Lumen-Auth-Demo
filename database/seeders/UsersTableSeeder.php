@@ -13,6 +13,5 @@ class UsersTableSeeder extends Seeder
     {
         factory(App\Models\User::class, 10)->create();
         $this->command->info('Users created');
-        gc_collect_cycles();
     }
 }

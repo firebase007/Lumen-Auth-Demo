@@ -11,14 +11,14 @@
 |
 */
 
-$factory->define(App\Models\User::class, function (Faker\Generator $faker) {
+// $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 
-    gc_collect_cycles();
+//     gc_collect_cycles();
 
-    return [
-        'name'  => str_replace('.', '', $faker->unique()->name),
-        'email'     => $faker->unique()->email,
-        'password'  => \Illuminate\Support\Facades\Hash::make('password'),
-        'address'       => $faker->sentence(10)
-    ];
-});
+//     return [
+//         'name'  => str_replace('.', '', $faker->unique()->name),
+//         'email'     => $faker->unique()->email,
+//         'password'  => \Illuminate\Support\Facades\Hash::make('password'),
+//         'address'       => $faker->sentence(10)
+//     ];
+// });
