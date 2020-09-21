@@ -46,7 +46,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         try {
-            Log::info('message', json_encode($request));
+            Log::info('message');
         $this->validateRegister($request);
 
         $user = User::create([
